@@ -14,6 +14,7 @@ hello world! (./src/commands/hello/world.ts)
   static args = {}
 
   async run(): Promise<void> {
-    this.log('hello world! (./src/commands/hello/world.ts)')
+    const {default: chalk} = await import('chalk')
+    this.log(chalk.bold('hello world! (./src/commands/hello/world.ts)'))
   }
 }
